@@ -1,6 +1,9 @@
 import React from "react";
-import { NavbarContainer } from "./style";
+import { NavbarContainer, NavbarWrapper } from "./style";
 import Link from "next/link";
+import { Flex } from "antd";
+import Title from "@/components/ui/Title";
+import Text from "@/components/ui/Text";
 
 const Navbar = () => {
     const data: { label: string; href: string }[] = [
@@ -11,15 +14,26 @@ const Navbar = () => {
     ];
 
     return (
-        <NavbarContainer>
-            <h1>Suash</h1>
-            
-            {data.map((data, ix) => (
-                <div key={`${data.label.toLowerCase()}-${ix}`}>
-                    <Link href={data.href}>{data.label}</Link>
-                </div>
-            ))}
-        </NavbarContainer>
+        <NavbarWrapper>
+            <NavbarContainer>
+                <Link href="/">
+                    <Title level={2}>Suash</Title>
+                </Link>
+
+                <Flex justify="flex-start" gap="large">
+                    {data.map((data, ix) => (
+                        <Link
+                            href={data.href}
+                            key={`${data.label.toLowerCase()}-${ix}`}
+                        >
+                            <Text fontSize="18px" fontWeight="600">
+                                {data.label}
+                            </Text>
+                        </Link>
+                    ))}
+                </Flex>
+            </NavbarContainer>
+        </NavbarWrapper>
     );
 };
 
