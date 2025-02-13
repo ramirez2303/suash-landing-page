@@ -18,6 +18,7 @@ const Text = ({
     return (
         <AntdText
             {...rest}
+            className="text-black dark:text-[#f2f2f2]"
             style={{ fontSize: fontSize, fontWeight: fontWeight }}
         >
             {children}

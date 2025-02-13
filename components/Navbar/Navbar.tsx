@@ -4,8 +4,14 @@ import Link from "next/link";
 import { Flex } from "antd";
 import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
+import { TfiWorld } from "react-icons/tfi";
+import { LuSunMedium } from "react-icons/lu";
 
-const Navbar = () => {
+type NavbarProps = {
+    toggleDarkMode: () => void;
+};
+
+const Navbar = ({ toggleDarkMode }: NavbarProps) => {
     const data: { label: string; href: string }[] = [
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },
@@ -24,9 +30,14 @@ const Navbar = () => {
 
     return (
         <NavbarWrapper animate="visible" initial="hidden" variants={variants}>
-            <NavbarContainer>
+            <NavbarContainer className="bg-[#f2f2f27f] dark:bg-[#1f1f1f7f] border border-[#b6b6b67f] dark:border-[#4a4a4a7f]">
                 <Link href="/">
-                    <Title level={2} fontWeight="400" isRowdies>
+                    <Title
+                        level={2}
+                        fontWeight="400"
+                        isRowdies
+                        className="text-white"
+                    >
                         Suash
                     </Title>
                 </Link>
@@ -42,6 +53,16 @@ const Navbar = () => {
                             </Text>
                         </Link>
                     ))}
+                </Flex>
+
+                <Flex justify="flex-end" align="center" gap="large">
+                    <LuSunMedium
+                        onClick={toggleDarkMode}
+                        fontSize="24px"
+                        className="text-black dark:text-[#f2f2f2]"
+                        cursor="pointer"
+                    />
+                    <TfiWorld className="text-black dark:text-[#f2f2f2]" />
                 </Flex>
             </NavbarContainer>
         </NavbarWrapper>

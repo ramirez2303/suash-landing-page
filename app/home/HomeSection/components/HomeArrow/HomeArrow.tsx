@@ -32,7 +32,10 @@ const HomeArrow = () => {
             variants={containerVariants}
         >
             <AnimatedArrow animate="animation" variants={arrowVariants}>
-                <RiArrowDownDoubleLine fontSize="80px" />
+                <RiArrowDownDoubleLine
+                    className="text-black dark:text-[#f2f2f2]"
+                    fontSize="80px"
+                />
             </AnimatedArrow>
         </ArrowContainer>
     );

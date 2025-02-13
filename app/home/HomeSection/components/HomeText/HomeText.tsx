@@ -24,7 +24,7 @@ const HomeText = ({ showNextLevel }: HomeTextProps) => {
     return (
         <Fragment>
             <Title level={1} fontSize="120px" fontWeight="400" isRowdies>
-                <LineShadowText shadowColor="black">Suash</LineShadowText>
+                <LineShadowText>Suash</LineShadowText>
             </Title>
             <AnimatePresence>
                 {showNextLevel && (
