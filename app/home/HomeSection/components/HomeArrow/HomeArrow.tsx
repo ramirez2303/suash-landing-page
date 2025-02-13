@@ -1,6 +1,7 @@
 import React from "react";
 import { RiArrowDownDoubleLine } from "react-icons/ri";
 import { AnimatedArrow, ArrowContainer } from "./style";
+import Link from "next/link";
 
 const HomeArrow = () => {
     const containerVariants = {
@@ -21,7 +22,7 @@ const HomeArrow = () => {
                 repeat: Infinity,
                 repeatDelay: 7,
                 duration: 1,
-                delay: 4,
+                delay: 6,
             },
         },
     };
@@ -31,12 +32,14 @@ const HomeArrow = () => {
             animate="visible"
             variants={containerVariants}
         >
-            <AnimatedArrow animate="animation" variants={arrowVariants}>
-                <RiArrowDownDoubleLine
-                    className="text-black dark:text-[#f2f2f2]"
-                    fontSize="80px"
-                />
-            </AnimatedArrow>
+            <Link href="#services">
+                <AnimatedArrow animate="animation" variants={arrowVariants}>
+                    <RiArrowDownDoubleLine
+                        className="text-black dark:text-[#f2f2f2]"
+                        fontSize="80px"
+                    />
+                </AnimatedArrow>
+            </Link>
         </ArrowContainer>
     );
 };

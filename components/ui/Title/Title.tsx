@@ -30,6 +30,7 @@ const Title = ({
                 fontWeight: fontWeight,
                 fontFamily: isRowdies ? "Rowdies" : "",
                 whiteSpace: "nowrap",
+                ...rest.style,
             }}
         >
             {children}

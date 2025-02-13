@@ -5,7 +5,8 @@ import { Flex } from "antd";
 import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
 import { TfiWorld } from "react-icons/tfi";
-import { LuSunMedium } from "react-icons/lu";
+import { LuSunMedium, LuMoonStar } from "react-icons/lu";
+import DarkModeToggle from "./components/DarkModeToggle";
 
 type NavbarProps = {
     toggleDarkMode: () => void;
@@ -56,12 +57,13 @@ const Navbar = ({ toggleDarkMode }: NavbarProps) => {
                 </Flex>
 
                 <Flex justify="flex-end" align="center" gap="large">
-                    <LuSunMedium
+                    <DarkModeToggle />
+                    {/* <LuSunMedium
                         onClick={toggleDarkMode}
                         fontSize="24px"
                         className="text-black dark:text-[#f2f2f2]"
                         cursor="pointer"
-                    />
+                    /> */}
                     <TfiWorld className="text-black dark:text-[#f2f2f2]" />
                 </Flex>
             </NavbarContainer>

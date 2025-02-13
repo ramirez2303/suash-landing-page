@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import styled from "styled-components";
 
-export const HomeWrapper = styled(motion.div)`
+export const HomeWrapper = styled(motion.section)`
     height: 100vh;
     display: flex;
     justify-content: center;

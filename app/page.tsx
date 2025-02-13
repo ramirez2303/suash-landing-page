@@ -1,18 +1,14 @@
-import { RetroGrid } from "@/components/magicui/retro-grid";
+import AboutSection from "./home/AboutSection";
 import HomeSection from "./home/HomeSection";
+import ServicesSection from "./home/ServicesSection";
 
 const Home = () => {
     return (
         <div>
             <HomeSection />
-            <div
-                style={{
-                    height: "100vh",
-                    transform: "rotate(180deg)",
-                }}
-            >
-                <RetroGrid angle={180} opacity={0.4} />
-            </div>
+            <ServicesSection />
+            <hr></hr>
+            <AboutSection />
         </div>
     );
 };
