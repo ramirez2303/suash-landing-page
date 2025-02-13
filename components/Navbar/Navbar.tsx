@@ -13,11 +13,22 @@ const Navbar = () => {
         { label: "Contact", href: "/contact" },
     ];
 
+    const variants = {
+        hidden: { opacity: 0, top: -20 },
+        visible: {
+            opacity: 1,
+            top: 20,
+            transition: { duration: 0.3, delay: 6 },
+        },
+    };
+
     return (
-        <NavbarWrapper>
+        <NavbarWrapper animate="visible" initial="hidden" variants={variants}>
             <NavbarContainer>
                 <Link href="/">
-                    <Title level={2}>Suash</Title>
+                    <Title level={2} fontWeight="400" isRowdies>
+                        Suash
+                    </Title>
                 </Link>
 
                 <Flex justify="flex-start" gap="large">

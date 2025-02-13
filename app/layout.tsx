@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Rowdies } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { AnimatePresence } from "motion/react";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const rowdies = Rowdies({
+    weight: ["300", "400", "700"],
+    style: "normal",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +20,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="es">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <Navbar />
-                {children}
-            </body>
-        </html>
+        <AnimatePresence>
+            <html lang="es">
+                <body className={`${rowdies.className}`}>
+                    <Navbar />
+                    {children}
+                </body>
+            </html>
+        </AnimatePresence>
     );
 }
