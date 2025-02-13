@@ -16,7 +16,9 @@ type LayoutComponentProps = {
 
 const LayoutComponent = ({ children }: LayoutComponentProps) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
-    const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
+    const toggleDarkMode = () => {
+        setTimeout(() => setIsDarkMode((prev) => !prev), 200);
+    };
     return (
         <Fragment>
             <ConfigProvider
@@ -32,7 +34,10 @@ const LayoutComponent = ({ children }: LayoutComponentProps) => {
                             isDarkMode && "dark"
                         } ${!isDarkMode ? "bg-white" : "bg-black"}`}
                     >
-                        <Navbar toggleDarkMode={toggleDarkMode} />
+                        <Navbar
+                            isDarkMode={isDarkMode}
+                            toggleDarkMode={toggleDarkMode}
+                        />
                         {children}
                     </body>
                 </AnimatePresence>
