@@ -8,5 +8,18 @@ export const AboutSectionWrapper = styled.section`
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(0deg, rgba(176, 176, 176, 0.5) 0%, #ffffff 70%);
+    background: linear-gradient(0deg, gray 0%, rgba(176, 176, 176, 0.5) 50%);
+`;
+
+export const LogoContainer = styled.div`
+    background-color: #ccc;
+    box-sizing: border-box;
+    padding: 80px;
+    border-radius: 50%;
+    transition: 300ms ease-in-out;
+
+    &:hover {
+        background-color:rgba(242, 242, 242, 0.7);
+        transform: scale(1.1);
+    }
 `;

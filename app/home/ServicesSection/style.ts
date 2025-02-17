@@ -24,6 +24,11 @@ export const ServicesWrapper = styled.section`
     gap: 70px;
 
     position: relative;
+
+    @media (max-width: 1500px) {
+        padding-top: 80px;
+        gap: 40px;
+    }
 `;
 
 export const ServicesCardContainer = styled.div`
@@ -38,4 +43,9 @@ export const ServicesCardContainer = styled.div`
     row-gap: 60px;
 
     margin: 0 auto;
+
+    @media (max-width: 1500px) {
+        gap: 0px;
+        row-gap: 40px;
+    }
 `;
