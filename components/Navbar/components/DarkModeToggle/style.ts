@@ -16,6 +16,6 @@ export const DarkModeToggleContainer = styled.div<{
     svg {
         transition: 300ms ease-in-out;
         position: relative;
-        bottom: ${({ $isDarkMode: isDarkMode }) => (isDarkMode ? "40px" : "0")};
+        bottom: ${({ $isDarkMode: isDarkMode }) => (isDarkMode ? "42px" : "0")};
     }
 `;

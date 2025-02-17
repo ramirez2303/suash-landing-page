@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
-import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import Title from "@/components/ui/Title";
 import { AnimatePresence } from "motion/react";
 import { AnimatedTextContainer } from "../../style";
+import suashLogo from "@/public/assets/suash-logo.png";
+import Image from "next/image";
 
 type HomeTextProps = {
     showNextLevel: boolean;
@@ -12,20 +13,20 @@ const HomeText = ({ showNextLevel }: HomeTextProps) => {
     const textVariants = {
         hidden: {
             opacity: 0,
-            y: -20,
+            y: -25,
+            x: -10,
         },
         visible: {
             opacity: 1,
-            y: 0,
+            y: -5,
+            x: -10,
             transition: { duration: 0.3, delay: 1 },
         },
-        exit: { opacity: 0, transition: { duration: 0.5, delay: 0 } },
+        exit: { opacity: 0, x: -10, transition: { duration: 0.5, delay: 0 } },
     };
     return (
         <Fragment>
-            <Title level={1} fontSize="120px" fontWeight="400" isRowdies>
-                <LineShadowText>Suash</LineShadowText>
-            </Title>
+            <Image src={suashLogo} alt="Suash Logo" width={550} />
             <AnimatePresence>
                 {showNextLevel && (
                     <AnimatedTextContainer
@@ -34,12 +35,7 @@ const HomeText = ({ showNextLevel }: HomeTextProps) => {
                         exit="exit"
                         variants={textVariants}
                     >
-                        <Title
-                            level={2}
-                            fontSize="42px"
-                            fontWeight="300"
-                            isRowdies
-                        >
+                        <Title level={2} fontSize="38px" fontWeight="300">
                             Next Level
                         </Title>
                     </AnimatedTextContainer>

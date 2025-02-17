@@ -1,3 +1,4 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -7,6 +8,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                discgent: ["var(--font-discgent)", ...fontFamily.sans],
+            },
             borderRadius: {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",

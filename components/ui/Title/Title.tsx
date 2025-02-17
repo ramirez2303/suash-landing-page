@@ -7,7 +7,6 @@ type TitleProps = {
     level?: 1 | 2 | 3 | 4 | 5;
     fontSize?: string;
     fontWeight?: string;
-    isRowdies?: boolean;
 } & ComponentProps<typeof Typography.Title>;
 
 const Title = ({
@@ -15,7 +14,6 @@ const Title = ({
     level,
     fontSize,
     fontWeight,
-    isRowdies,
     ...rest
 }: TitleProps) => {
     const { Title: AntdTitle } = Typography;
@@ -28,7 +26,6 @@ const Title = ({
                 margin: 0,
                 fontSize: fontSize,
                 fontWeight: fontWeight,
-                fontFamily: isRowdies ? "Rowdies" : "",
                 whiteSpace: "nowrap",
                 ...rest.style,
             }}

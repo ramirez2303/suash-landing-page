@@ -6,6 +6,7 @@ import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
 import { TfiWorld } from "react-icons/tfi";
 import DarkModeToggle from "./components/DarkModeToggle";
+import ContactButton from "./components/ContactButton";
 
 type NavbarProps = {
     isDarkMode: boolean;
@@ -33,30 +34,26 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
         <NavbarWrapper animate="visible" initial="hidden" variants={variants}>
             <NavbarContainer className="bg-[#f2f2f27f] dark:bg-[#1f1f1f7f] border border-[#b6b6b67f] dark:border-[#4a4a4a7f]">
                 <Link href="/">
-                    <Title
-                        level={2}
-                        fontWeight="400"
-                        isRowdies
-                        className="text-white"
-                    >
+                    <Title level={2} fontWeight="400" className="text-white">
                         Suash
                     </Title>
                 </Link>
 
-                <Flex justify="flex-start" gap="large">
+                <Flex justify="flex-start" gap="middle">
                     {data.map((data, ix) => (
                         <Link
                             href={data.href}
                             key={`${data.label.toLowerCase()}-${ix}`}
                         >
-                            <Text fontSize="18px" fontWeight="600">
+                            <Text fontSize="20px" fontWeight="600">
                                 {data.label}
                             </Text>
                         </Link>
                     ))}
                 </Flex>
 
-                <Flex justify="flex-end" align="center" gap="large">
+                <Flex justify="flex-end" align="center" gap="middle">
+                    <ContactButton />
                     <DarkModeToggle
                         isDarkMode={isDarkMode}
                         toggleDarkMode={toggleDarkMode}

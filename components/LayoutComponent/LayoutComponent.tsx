@@ -1,17 +1,24 @@
 "use client";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, ReactNode, useState } from "react";
 import { ConfigProvider } from "antd";
 import { AnimatePresence } from "motion/react";
-import { Rowdies } from "next/font/google";
 import Navbar from "../Navbar";
+import localFont from "next/font/local";
+import { Kanit } from "next/font/google";
 
-const rowdies = Rowdies({
-    weight: ["300", "400", "700"],
-    style: "normal",
+const discgent = localFont({
+    src: "../../public/fonts/Discgent.ttf",
+    variable: "--font-discgent",
+});
+
+const kanit = Kanit({
+    weight: ["400", "500", "600", "700"],
+    style: ["normal"],
+    subsets: ["latin"],
 });
 
 type LayoutComponentProps = {
-    children: React.ReactNode;
+    children: ReactNode;
 };
 
 const LayoutComponent = ({ children }: LayoutComponentProps) => {
@@ -25,12 +32,13 @@ const LayoutComponent = ({ children }: LayoutComponentProps) => {
                 theme={{
                     token: {
                         colorText: "",
+                        fontFamily: '"Discgent", "sans-serif"',
                     },
                 }}
             >
                 <AnimatePresence>
                     <body
-                        className={`${rowdies.className} ${
+                        className={`${discgent.variable} ${kanit.className} ${
                             isDarkMode && "dark"
                         } ${!isDarkMode ? "bg-white" : "bg-black"}`}
                     >

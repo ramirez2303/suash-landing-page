@@ -4,14 +4,14 @@ import React from "react";
 import { BgContainer, ServicesCardContainer, ServicesWrapper } from "./style";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import Title from "@/components/ui/Title";
-import graphicDesign from "@/public/assets/design-graphic-card.jpg";
-import webDevelopment from "@/public/assets/web-development-card.jpg";
-import communityManager from "@/public/assets/community-manager-card.avif";
-import imageAndVideo from "@/public/assets/photo-video-card.jpg";
-import graphicDesignVector from "@/public/assets/graphic-design-vector.png";
-import webDevelopmentVector from "@/public/assets/code-vector.png";
-import communityManagerVector from "@/public/assets/cm-vector.avif";
-import imageAndVideoVector from "@/public/assets/camera-vector.png";
+import graphicDesign from "@/public/assets/services/design-graphic-card.jpg";
+import webDevelopment from "@/public/assets/services/web-development-card.jpg";
+import communityManager from "@/public/assets/services/community-manager-card.avif";
+import imageAndVideo from "@/public/assets/services/photo-video-card.jpg";
+import graphicDesignVector from "@/public/assets/services/graphic-design-vector.png";
+import webDevelopmentVector from "@/public/assets/services/code-vector.png";
+import communityManagerVector from "@/public/assets/services/cm-vector.avif";
+import imageAndVideoVector from "@/public/assets/services/camera-vector.png";
 
 const ServicesSection = () => {
     const data = [
@@ -39,7 +39,7 @@ const ServicesSection = () => {
 
     return (
         <ServicesWrapper id="services">
-            <Title level={2} fontSize="40px">
+            <Title level={2} fontSize="36px" fontWeight="400">
                 Services
             </Title>
             <ServicesCardContainer>

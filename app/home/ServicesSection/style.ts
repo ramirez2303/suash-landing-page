@@ -20,8 +20,8 @@ export const ServicesWrapper = styled.section`
     flex-direction: column;
 
     box-sizing: border-box;
-    padding-top: 120px;
-    gap: 60px;
+    padding-top: 150px;
+    gap: 70px;
 
     position: relative;
 `;

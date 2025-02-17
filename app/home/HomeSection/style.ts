@@ -25,5 +25,5 @@ export const HomeContainer = styled(motion.div)`
 export const AnimatedTextContainer = styled(motion.div)`
     position: absolute;
     z-index: 1;
-    top: 15px;
+    top: -10px;
 `;
