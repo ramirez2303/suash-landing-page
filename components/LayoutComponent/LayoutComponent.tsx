@@ -24,7 +24,7 @@ type LayoutComponentProps = {
 const LayoutComponent = ({ children }: LayoutComponentProps) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const toggleDarkMode = () => {
-        setTimeout(() => setIsDarkMode((prev) => !prev), 200);
+        setTimeout(() => setIsDarkMode((prev) => !prev), 100);
     };
     return (
         <Fragment>

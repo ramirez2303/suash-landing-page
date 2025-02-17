@@ -26,7 +26,12 @@ const HomeText = ({ showNextLevel }: HomeTextProps) => {
     };
     return (
         <Fragment>
-            <Image src={suashLogo} alt="Suash Logo" width={550} />
+            <Image
+                src={suashLogo}
+                alt="Suash Logo"
+                width={550}
+                className="dark:brightness-[0] dark:invert-[1]"
+            />
             <AnimatePresence>
                 {showNextLevel && (
                     <AnimatedTextContainer
