@@ -40,12 +40,32 @@ const ServicesSection = () => {
         },
     ];
 
+    const servicesVariants = {
+        hidden: {
+            opacity: 0,
+            y: 100,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.5,
+                duration: 0.5,
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
     return (
         <ServicesWrapper id="services">
             <Title level={2} fontSize="36px" fontWeight="400">
                 Servicios
             </Title>
-            <ServicesCardContainer>
+            <ServicesCardContainer
+                variants={servicesVariants}
+                initial="hidden"
+                whileInView="visible"
+            >
                 {data.map((item, ix) => (
                     <AnimatedCard
                         key={ix}

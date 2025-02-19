@@ -1,7 +1,7 @@
-import { Flex } from "antd";
 import React from "react";
 import { IoMegaphoneOutline } from "react-icons/io5";
 import InfoCard from "../InfoCard";
+import { AnimatedContainer } from "../Objectives/style";
 
 const Advantages = () => {
     const data = [
@@ -39,8 +39,29 @@ const Advantages = () => {
                 "Impulsa tu negocio con estrategias bien planificadas y ejecutadas para maximizar tu alcance y éxito.",
         },
     ];
+
+    const containerVariants = {
+        hidden: {
+            opacity: 0,
+            x: 100,
+        },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: 0.5,
+                duration: 1,
+                type: "spring",
+                stiffness: 50,
+            },
+        },
+    };
     return (
-        <Flex justify="center" align="center" gap="40px">
+        <AnimatedContainer
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+        >
             {data.map((item, ix) => (
                 <InfoCard
                     key={ix}
@@ -49,7 +70,7 @@ const Advantages = () => {
                     description={item.description}
                 />
             ))}
-        </Flex>
+        </AnimatedContainer>
     );
 };
 

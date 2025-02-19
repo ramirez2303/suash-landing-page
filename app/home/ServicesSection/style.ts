@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import styled from "styled-components";
 
 export const BgContainer = styled.div`
@@ -31,7 +32,7 @@ export const ServicesWrapper = styled.section`
     }
 `;
 
-export const ServicesCardContainer = styled.div`
+export const ServicesCardContainer = styled(motion.div)`
     max-width: 1200px;
     width: 100%;
 
