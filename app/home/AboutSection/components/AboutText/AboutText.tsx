@@ -13,7 +13,7 @@ const AboutText = () => {
             style={{ maxWidth: "500px" }}
         >
             <Title level={3} fontSize="42px" fontWeight="400">
-                AboutText
+                Sobre nosotros
             </Title>
             <Text fontSize="20px" fontWeight="400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla

@@ -18,7 +18,7 @@ const Text = ({
     return (
         <AntdText
             {...rest}
-            className="text-black dark:text-[#f2f2f2]"
+            className={`text-black dark:text-[#f2f2f2] ${rest.className}`}
             style={{
                 fontSize: fontSize,
                 fontWeight: fontWeight,

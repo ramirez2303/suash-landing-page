@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const BgContainer = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     transform: rotate(180deg);
     position: absolute;
     top: 0;
@@ -12,7 +12,7 @@ export const BgContainer = styled.div`
 `;
 
 export const ServicesWrapper = styled.section`
-    height: 100vh;
+    /* height: 100vh; */
 
     display: flex;
     justify-content: flex-start;

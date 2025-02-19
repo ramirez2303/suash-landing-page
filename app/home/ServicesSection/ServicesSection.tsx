@@ -12,6 +12,9 @@ import graphicDesignVector from "@/public/assets/services/graphic-design-vector.
 import webDevelopmentVector from "@/public/assets/services/code-vector.png";
 import communityManagerVector from "@/public/assets/services/cm-vector.avif";
 import imageAndVideoVector from "@/public/assets/services/camera-vector.png";
+import { Flex } from "antd";
+import Objectives from "./components/Objectives";
+import Advantages from "./components/Advantages";
 
 const ServicesSection = () => {
     const data = [
@@ -40,7 +43,7 @@ const ServicesSection = () => {
     return (
         <ServicesWrapper id="services">
             <Title level={2} fontSize="36px" fontWeight="400">
-                Services
+                Servicios
             </Title>
             <ServicesCardContainer>
                 {data.map((item, ix) => (
@@ -52,6 +55,25 @@ const ServicesSection = () => {
                     />
                 ))}
             </ServicesCardContainer>
+            <Flex
+                style={{
+                    maxWidth: "1200px",
+                    width: "100%",
+                    boxSizing: "border-box",
+                    padding: "20px 20px 80px",
+                    marginTop: "40px",
+                }}
+                justify="center"
+                align="center"
+                gap="80px"
+                vertical
+            >
+                <Title level={2} fontSize="36px" fontWeight="400">
+                    Objetivos y Ventajas
+                </Title>
+                <Objectives />
+                <Advantages />
+            </Flex>
             <BgContainer>
                 <RetroGrid angle={180} opacity={0.4} />
             </BgContainer>

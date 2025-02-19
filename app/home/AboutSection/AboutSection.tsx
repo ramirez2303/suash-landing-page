@@ -19,6 +19,7 @@ const AboutSection = () => {
                         alt="Suash Logo"
                         width={180}
                         height={180}
+                        
                     />
                 </LogoContainer>
                 <AboutText />
