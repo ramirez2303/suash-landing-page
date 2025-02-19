@@ -22,7 +22,7 @@ const ContactModal = ({ modalConfig }: ContactModalProps) => {
             onCancel={modalConfig.handleCancel}
             footer={[
                 <ModalButton
-                    key="link"
+                    key="close"
                     onClick={modalConfig.handleOk}
                     className="text-black hover:text-white hover:bg-black dark:text-white dark:hover:text-black dark:hover:bg-white"
                 >
@@ -30,7 +30,7 @@ const ContactModal = ({ modalConfig }: ContactModalProps) => {
                 </ModalButton>,
 
                 <ModalButton
-                    key="link"
+                    key="contact"
                     onClick={modalConfig.handleOk}
                     className="text-black hover:text-white hover:bg-black dark:text-white dark:hover:text-black dark:hover:bg-white"
                 >

@@ -22,7 +22,7 @@ const Text = ({
             style={{
                 fontSize: fontSize,
                 fontWeight: fontWeight,
-                fontFamily: "kanit",
+                fontFamily: '"kanit", sans-serif',
                 ...rest.style,
             }}
         >

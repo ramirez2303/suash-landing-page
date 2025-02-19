@@ -13,7 +13,7 @@ const HomeContainer = ({ children }: HomeContainerProps) => {
         },
         visible: {
             display: "block",
-            transition: { delay: 6 },
+            transition: { delay: 0 },
         },
     };
 
