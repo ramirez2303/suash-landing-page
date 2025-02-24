@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { AnimatedCardContainer } from "./style";
 import { StaticImageData } from "next/image";

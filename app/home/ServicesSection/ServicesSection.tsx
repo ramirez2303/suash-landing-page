@@ -1,3 +1,4 @@
+"use client";
 import AnimatedCard from "@/components/AnimatedCard";
 import React from "react";
 import { BgContainer, ServicesCardContainer, ServicesWrapper } from "./style";
