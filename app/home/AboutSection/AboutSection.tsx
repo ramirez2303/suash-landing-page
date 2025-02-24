@@ -3,6 +3,7 @@ import { Flex } from "antd";
 import AboutText from "./components/AboutText";
 import { AboutSectionWrapper, LogoContainer } from "./style";
 import Image from "next/image";
+// import videoBG from "@/public/assets/services/video-card.jpg";
 import SLogo from "@/public/assets/s-suash-logo.png";
 
 const AboutSection = () => {
@@ -11,15 +12,15 @@ const AboutSection = () => {
             <Flex
                 justify="space-around"
                 align="center"
-                style={{ maxWidth: "1200px", width: "100%" }}
+                style={{ width: "80%" }}
             >
                 <LogoContainer>
                     <Image
                         src={SLogo}
                         alt="Suash Logo"
+                        // sizes="100%"
                         width={180}
                         height={180}
-                        
                     />
                 </LogoContainer>
                 <AboutText />

@@ -7,11 +7,16 @@ import Title from "@/components/ui/Title";
 import graphicDesign from "@/public/assets/services/design-graphic-card.jpg";
 import webDevelopment from "@/public/assets/services/web-development-card.jpg";
 import communityManager from "@/public/assets/services/community-manager-card.avif";
-import imageAndVideo from "@/public/assets/services/photo-video-card.jpg";
+import imageAndVideo from "@/public/assets/services/photographic-card.jpg";
+import drone from "@/public/assets/services/drone-card.jpg";
+import video from "@/public/assets/services/video-card.jpg";
 import graphicDesignVector from "@/public/assets/services/graphic-design-vector.png";
 import webDevelopmentVector from "@/public/assets/services/code-vector.png";
 import communityManagerVector from "@/public/assets/services/cm-vector.avif";
 import imageAndVideoVector from "@/public/assets/services/camera-vector.png";
+import droneVector from "@/public/assets/services/drone-vector.png";
+import videoVector from "@/public/assets/services/video-vector.svg";
+
 import { Flex } from "antd";
 import Objectives from "./components/Objectives";
 import Advantages from "./components/Advantages";
@@ -24,9 +29,19 @@ const ServicesSection = () => {
             icon: graphicDesignVector,
         },
         {
-            title: "Image & Video",
+            title: "Photograpic",
             image: imageAndVideo,
             icon: imageAndVideoVector,
+        },
+        {
+            title: "Video",
+            image: video,
+            icon: videoVector,
+        },
+        {
+            title: "Drone",
+            image: drone,
+            icon: droneVector,
         },
         {
             title: "Community Manager",
@@ -77,7 +92,6 @@ const ServicesSection = () => {
             </ServicesCardContainer>
             <Flex
                 style={{
-                    maxWidth: "1200px",
                     width: "100%",
                     boxSizing: "border-box",
                     padding: "20px 20px 80px",

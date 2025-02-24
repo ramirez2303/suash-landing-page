@@ -6,12 +6,14 @@ type TextProps = {
     children: string;
     fontSize?: string;
     fontWeight?: string;
+    noWrap?: boolean;
 } & ComponentProps<typeof Typography.Text>;
 
 const Text = ({
     children,
     fontSize = "16px",
     fontWeight = "400",
+    noWrap,
     ...rest
 }: TextProps) => {
     const { Text: AntdText } = Typography;
@@ -23,6 +25,7 @@ const Text = ({
                 fontSize: fontSize,
                 fontWeight: fontWeight,
                 fontFamily: '"kanit", sans-serif',
+                whiteSpace: noWrap ? "nowrap" : "wrap",
                 ...rest.style,
             }}
         >

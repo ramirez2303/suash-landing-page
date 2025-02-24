@@ -12,7 +12,7 @@ export const ContactSectionWrapper = styled.div`
 
     background: linear-gradient(0deg, #fff 0%, rgba(176, 176, 176, 0.5) 80%);
 
-    div {
-        max-width: 1200px;
+    & > div {
+        max-width: 80%;
     }
 `;

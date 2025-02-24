@@ -15,7 +15,7 @@ const FormButton = ({
     isLoading,
 }: FormButtonProps) => {
     return (
-        <Form.Item>
+        <Form.Item style={{ width: "100%" }}>
             <button
                 type="submit"
                 disabled={isDisabled}

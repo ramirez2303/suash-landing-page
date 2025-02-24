@@ -25,7 +25,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
         hidden: { opacity: 0, top: -20 },
         visible: {
             opacity: 1,
-            top: 20,
+            top: 0,
             transition: { duration: 0.3, delay: 6 },
         },
     };

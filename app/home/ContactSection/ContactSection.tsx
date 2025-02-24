@@ -50,7 +50,7 @@ const ContactSection = () => {
                                     fontSize="20px"
                                     className="text-black dark:text-white"
                                 />
-                                <Text fontSize="20px" fontWeight="400">
+                                <Text fontSize="20px" fontWeight="400" noWrap>
                                     +54 9 11 1234-5678
                                 </Text>
                             </Flex>
@@ -59,7 +59,7 @@ const ContactSection = () => {
                                     fontSize="20px"
                                     className="text-black dark:text-white"
                                 />
-                                <Text fontSize="20px" fontWeight="400">
+                                <Text fontSize="20px" fontWeight="400" noWrap>
                                     exampleInstagram
                                 </Text>
                             </Flex>
@@ -70,7 +70,7 @@ const ContactSection = () => {
                                     fontSize="20px"
                                     className="text-black dark:text-white"
                                 />
-                                <Text fontSize="20px" fontWeight="400">
+                                <Text fontSize="20px" fontWeight="400" noWrap>
                                     example@mail.com
                                 </Text>
                             </Flex>
@@ -79,7 +79,7 @@ const ContactSection = () => {
                                     fontSize="20px"
                                     className="text-black dark:text-white"
                                 />
-                                <Text fontSize="20px" fontWeight="400">
+                                <Text fontSize="20px" fontWeight="400" noWrap>
                                     Linkedin
                                 </Text>
                             </Flex>

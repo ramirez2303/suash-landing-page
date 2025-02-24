@@ -31,11 +31,11 @@ const FormInput = ({
                 },
                 ...(type === "number"
                     ? [
-                        {
-                            pattern: /^\d+$/,
-                            message: "Por favor ingrese solo números",
-                        },
-                    ]
+                          {
+                              pattern: /^\d+$/,
+                              message: "Por favor ingrese solo números",
+                          },
+                      ]
                     : []),
             ]}
         >
@@ -47,11 +47,7 @@ const FormInput = ({
                     style={{ resize: "none" }}
                 />
             ) : (
-                <Input
-                    placeholder={placeholder}
-                    name={name}
-                    type={type}
-                />
+                <Input placeholder={placeholder} name={name} type={type} />
             )}
         </Form.Item>
     );

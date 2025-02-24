@@ -13,8 +13,6 @@ export const BgContainer = styled.div`
 `;
 
 export const ServicesWrapper = styled.section`
-    /* height: 100vh; */
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -33,13 +31,11 @@ export const ServicesWrapper = styled.section`
 `;
 
 export const ServicesCardContainer = styled(motion.div)`
-    max-width: 1200px;
-    width: 100%;
-
+    width: 80%;
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, minmax(400px, 1fr));
     gap: 20px;
     row-gap: 60px;
 

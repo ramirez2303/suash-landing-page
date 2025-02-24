@@ -19,6 +19,7 @@ export const FormContainer = styled.div`
     label,
     input,
     textArea {
+        width: 100%;
         font-family: "kanit", sans-serif;
     }
 
