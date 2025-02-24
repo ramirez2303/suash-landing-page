@@ -61,6 +61,7 @@ const Advantages = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
         >
             {data.map((item, ix) => (
                 <InfoCard

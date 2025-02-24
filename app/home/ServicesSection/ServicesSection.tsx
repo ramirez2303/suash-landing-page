@@ -79,6 +79,7 @@ const ServicesSection = () => {
                 variants={servicesVariants}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ once: true }}
             >
                 {data.map((item, ix) => (
                     <AnimatedCard
