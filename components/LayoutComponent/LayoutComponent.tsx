@@ -1,11 +1,10 @@
 "use client";
+
 import React, { Fragment, ReactNode, useState } from "react";
-import { ConfigProvider } from "antd";
 import { AnimatePresence } from "motion/react";
 import Navbar from "../Navbar";
 import localFont from "next/font/local";
 import { Kanit } from "next/font/google";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const discgent = localFont({
     src: "../../public/fonts/Discgent.ttf",
@@ -27,35 +26,21 @@ const LayoutComponent = ({ children }: LayoutComponentProps) => {
     const toggleDarkMode = () => {
         setTimeout(() => setIsDarkMode((prev) => !prev), 100);
     };
-    const queryClient = new QueryClient();
     return (
         <Fragment>
-            <QueryClientProvider client={queryClient}>
-                <ConfigProvider
-                    theme={{
-                        token: {
-                            colorText: "",
-                            fontFamily: '"Discgent", "sans-serif"',
-                        },
-                    }}
+            <AnimatePresence>
+                <div
+                    className={`${discgent.variable} ${kanit.className} ${
+                        isDarkMode && "dark"
+                    } ${!isDarkMode ? "bg-white" : "bg-black"}`}
                 >
-                    <AnimatePresence>
-                        <body
-                            className={`${discgent.variable} ${
-                                kanit.className
-                            } ${isDarkMode && "dark"} ${
-                                !isDarkMode ? "bg-white" : "bg-black"
-                            }`}
-                        >
-                            <Navbar
-                                isDarkMode={isDarkMode}
-                                toggleDarkMode={toggleDarkMode}
-                            />
-                            {children}
-                        </body>
-                    </AnimatePresence>
-                </ConfigProvider>
-            </QueryClientProvider>
+                    <Navbar
+                        isDarkMode={isDarkMode}
+                        toggleDarkMode={toggleDarkMode}
+                    />
+                    {children}
+                </div>
+            </AnimatePresence>
         </Fragment>
     );
 };

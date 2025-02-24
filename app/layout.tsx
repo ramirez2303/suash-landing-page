@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import LayoutComponent from "@/components/LayoutComponent";
 import StyledComponentsRegistry from "@/lib/registry";
+import ClientProviders from "./ClientProviders";
 
 export const metadata: Metadata = {
     title: "Suash Media",
@@ -22,9 +23,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="es">
-            <StyledComponentsRegistry>
-                <LayoutComponent>{children}</LayoutComponent>
-            </StyledComponentsRegistry>
+            <body>
+                <ClientProviders>
+                    <StyledComponentsRegistry>
+                        <LayoutComponent>{children}</LayoutComponent>
+                    </StyledComponentsRegistry>
+                </ClientProviders>
+            </body>
         </html>
     );
 }
