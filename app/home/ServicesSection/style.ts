@@ -9,10 +9,11 @@ export const BgContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
 `;
 
 export const ServicesWrapper = styled.section`
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -41,8 +42,12 @@ export const ServicesCardContainer = styled(motion.div)`
 
     margin: 0 auto;
 
+    position: relative;
+    z-index: 1;
+
     @media (max-width: 1500px) {
         gap: 0px;
         row-gap: 40px;
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
     }
 `;

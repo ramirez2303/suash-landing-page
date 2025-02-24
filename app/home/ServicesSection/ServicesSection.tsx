@@ -1,4 +1,3 @@
-"use client";
 import AnimatedCard from "@/components/AnimatedCard";
 import React from "react";
 import { BgContainer, ServicesCardContainer, ServicesWrapper } from "./style";
@@ -96,6 +95,8 @@ const ServicesSection = () => {
                     boxSizing: "border-box",
                     padding: "20px 20px 80px",
                     marginTop: "40px",
+                    position: "relative",
+                    zIndex: 1,
                 }}
                 justify="center"
                 align="center"
