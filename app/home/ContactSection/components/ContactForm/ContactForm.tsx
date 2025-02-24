@@ -1,61 +1,61 @@
 "use client";
-import { Form, Input } from "antd";
-import React from "react";
+import { Form } from "antd";
+import React, { Fragment } from "react";
 import { FormContainer } from "./style";
-
-type FieldType = {
-    name: string;
-    email: string;
-    cellphone: number;
-    message?: string;
-};
+import useSendEmail from "@/hooks/useSendEmail";
+import { useForm } from "@/hooks/useForm";
+import FormButton from "./components/FormButton";
+import FormInput from "./components/FormInput";
+import { formFields } from "@/lib/data";
 
 const ContactForm = () => {
+    const { handleSendEmail, messageComponent, isLoading } = useSendEmail();
+    const { form, values, isDisabled } = useForm();
+
+    const disabledStyles = isLoading
+        ? "cursor-wait cursor-not-allowed pointer-events-none"
+        : isDisabled
+        ? "opacity-70 cursor-not-allowed pointer-events-none"
+        : "hover:bg-[rgba(0,0,0,0.8)] active:bg-[rgba(0,0,0,0.6)] cursor-pointer";
+
+    const handleSubmit = () =>
+        handleSendEmail({
+            name: values.name,
+            email: values.email,
+            phone: values.phone,
+            message: values?.message ?? "",
+        });
+
     return (
-        <FormContainer>
-            <Form name="contact-form" layout="vertical">
-                <Form.Item<FieldType>
-                    label="Nombre"
-                    name="name"
+        <Fragment>
+            <FormContainer>
+                <Form
+                    form={form}
+                    name="contact-form"
                     layout="vertical"
-                    rules={[{ required: true, type: "string" }]}
+                    autoComplete="off"
                 >
-                    <Input placeholder="Nombre" name="name" type="text" />
-                </Form.Item>
-                <Form.Item<FieldType>
-                    label="Email"
-                    name="email"
-                    layout="vertical"
-                    rules={[{ required: true, type: "string" }]}
-                >
-                    <Input placeholder="Email" name="email" type="email" />
-                </Form.Item>
-                <Form.Item<FieldType>
-                    label="Telefono"
-                    name="cellphone"
-                    layout="vertical"
-                    rules={[{ required: true, type: "number" }]}
-                >
-                    <Input placeholder="Telefono" name="cellphone" type="tel" />
-                </Form.Item>
-                <Form.Item<FieldType>
-                    label="Mensaje"
-                    name="message"
-                    layout="vertical"
-                    rules={[{ type: "string" }]}
-                >
-                    <Input.TextArea placeholder="Mensaje" name="message" />
-                </Form.Item>
-                <Form.Item label={null}>
-                    <button
-                        type="submit"
-                        className="mt-5 transition-all duration-300 ease-in-out rounded-lg w-full bg-black hover:bg-[rgba(0,0,0,0.8)] active:bg-[rgba(0,0,0,0.6)] dark:bg-white text-white dark:text-black text-lg font-bold p-3"
-                    >
-                        Enviar
-                    </button>
-                </Form.Item>
-            </Form>
-        </FormContainer>
+                    {formFields.map((field) => (
+                        <FormInput
+                            key={field.name}
+                            label={field.label}
+                            name={field.name}
+                            placeholder={field.placeholder}
+                            type={field.type}
+                            required={field.required}
+                            isTextArea={field.isTextArea}
+                        />
+                    ))}
+                    <FormButton
+                        isDisabled={isDisabled}
+                        disabledStyles={disabledStyles}
+                        handleSubmit={handleSubmit}
+                        isLoading={isLoading}
+                    />
+                </Form>
+            </FormContainer>
+            {messageComponent}
+        </Fragment>
     );
 };
 

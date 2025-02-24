@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "motion/react";
 
 type HomeContainerProps = Readonly<{
-    children: React.ReactNode;
+    children: ReactNode;
 }>;
 
 const HomeContainer = ({ children }: HomeContainerProps) => {
@@ -13,7 +13,7 @@ const HomeContainer = ({ children }: HomeContainerProps) => {
         },
         visible: {
             display: "block",
-            transition: { delay: 0 },
+            transition: { delay: 6 },
         },
     };
 

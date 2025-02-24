@@ -5,6 +5,7 @@ import { AnimatePresence } from "motion/react";
 import Navbar from "../Navbar";
 import localFont from "next/font/local";
 import { Kanit } from "next/font/google";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const discgent = localFont({
     src: "../../public/fonts/Discgent.ttf",
@@ -26,30 +27,35 @@ const LayoutComponent = ({ children }: LayoutComponentProps) => {
     const toggleDarkMode = () => {
         setTimeout(() => setIsDarkMode((prev) => !prev), 100);
     };
+    const queryClient = new QueryClient();
     return (
         <Fragment>
-            <ConfigProvider
-                theme={{
-                    token: {
-                        colorText: "",
-                        fontFamily: '"Discgent", "sans-serif"',
-                    },
-                }}
-            >
-                <AnimatePresence>
-                    <body
-                        className={`${discgent.variable} ${kanit.className} ${
-                            isDarkMode && "dark"
-                        } ${!isDarkMode ? "bg-white" : "bg-black"}`}
-                    >
-                        <Navbar
-                            isDarkMode={isDarkMode}
-                            toggleDarkMode={toggleDarkMode}
-                        />
-                        {children}
-                    </body>
-                </AnimatePresence>
-            </ConfigProvider>
+            <QueryClientProvider client={queryClient}>
+                <ConfigProvider
+                    theme={{
+                        token: {
+                            colorText: "",
+                            fontFamily: '"Discgent", "sans-serif"',
+                        },
+                    }}
+                >
+                    <AnimatePresence>
+                        <body
+                            className={`${discgent.variable} ${
+                                kanit.className
+                            } ${isDarkMode && "dark"} ${
+                                !isDarkMode ? "bg-white" : "bg-black"
+                            }`}
+                        >
+                            <Navbar
+                                isDarkMode={isDarkMode}
+                                toggleDarkMode={toggleDarkMode}
+                            />
+                            {children}
+                        </body>
+                    </AnimatePresence>
+                </ConfigProvider>
+            </QueryClientProvider>
         </Fragment>
     );
 };

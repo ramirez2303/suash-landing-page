@@ -6,7 +6,7 @@ export const FormContainer = styled.div`
     flex-direction: column;
     gap: 10px;
 
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -22,12 +22,10 @@ export const FormContainer = styled.div`
         font-family: "kanit", sans-serif;
     }
 
-    :where(.css-dev-only-do-not-override-1gzsd9m).ant-form-item
-        .ant-form-item-label
-        > label {
-        font-size: 20px;
-        font-weight: 500;
+    label {
         color: #000;
+        font-size: 24px;
+        font-weight: 400;
     }
 
     textArea,
@@ -42,5 +40,15 @@ export const FormContainer = styled.div`
     .ant-form-item-explain-error {
         font-family: "kanit", sans-serif;
         font-size: 14px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield; /* Firefox */
     }
 `;
