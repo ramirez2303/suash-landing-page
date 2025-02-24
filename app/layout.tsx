@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutComponent from "@/components/LayoutComponent";
+import StyledComponentsRegistry from "@/lib/registry";
 
 export const metadata: Metadata = {
     title: "Suash Media",
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="es">
-            <LayoutComponent>{children}</LayoutComponent>
+            <StyledComponentsRegistry>
+                <LayoutComponent>{children}</LayoutComponent>
+            </StyledComponentsRegistry>
         </html>
     );
 }
