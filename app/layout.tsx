@@ -3,6 +3,7 @@ import "./globals.css";
 import LayoutComponent from "@/components/LayoutComponent";
 import StyledComponentsRegistry from "@/lib/registry";
 import ClientProviders from "./ClientProviders";
+import I18nProvider from "./I18nProvider";
 
 export const metadata: Metadata = {
     title: "Suash Media",
@@ -26,7 +27,9 @@ export default function RootLayout({
             <body>
                 <ClientProviders>
                     <StyledComponentsRegistry>
-                        <LayoutComponent>{children}</LayoutComponent>
+                        <I18nProvider>
+                            <LayoutComponent>{children}</LayoutComponent>
+                        </I18nProvider>
                     </StyledComponentsRegistry>
                 </ClientProviders>
             </body>

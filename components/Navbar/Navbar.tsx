@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Flex } from "antd";
 import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
-import { TfiWorld } from "react-icons/tfi";
 import DarkModeToggle from "./components/DarkModeToggle";
 import ContactButton from "./components/ContactButton";
+// import { TfiWorld } from "react-icons/tfi";
 
 type NavbarProps = {
     isDarkMode: boolean;
@@ -15,10 +15,10 @@ type NavbarProps = {
 
 const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
     const data: { label: string; href: string }[] = [
-        { label: "Home", href: "/" },
-        { label: "Services", href: "/services" },
-        { label: "About", href: "/about" },
-        { label: "Contact", href: "/contact" },
+        { label: "Inicio", href: "/" },
+        { label: "Servicios", href: "/services" },
+        { label: "Acerca De", href: "/about" },
+        { label: "Contacto", href: "/contact" },
     ];
 
     const variants = {
@@ -39,13 +39,17 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
                     </Title>
                 </Link>
 
-                <Flex justify="flex-start" gap="middle">
+                <Flex justify="flex-start" gap="large">
                     {data.map((data, ix) => (
                         <Link
                             href={data.href}
                             key={`${data.label.toLowerCase()}-${ix}`}
                         >
-                            <Text fontSize="20px" fontWeight="600">
+                            <Text
+                                fontSize="20px"
+                                fontWeight="600"
+                                className="border-solid border-b-[2px] border-transparent hover:border-black dark:hover:border-white transition-all duration-300"
+                            >
                                 {data.label}
                             </Text>
                         </Link>
@@ -58,13 +62,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
                         isDarkMode={isDarkMode}
                         toggleDarkMode={toggleDarkMode}
                     />
-                    {/* <LuSunMedium
-                        onClick={toggleDarkMode}
-                        fontSize="24px"
-                        className="text-black dark:text-[#f2f2f2]"
-                        cursor="pointer"
-                    /> */}
-                    <TfiWorld className="text-black dark:text-[#f2f2f2]" />
+                    {/* <TfiWorld className="text-black dark:text-[#f2f2f2]" /> */}
                 </Flex>
             </NavbarContainer>
         </NavbarWrapper>
