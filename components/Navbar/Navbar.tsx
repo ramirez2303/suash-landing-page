@@ -1,11 +1,10 @@
 import React from "react";
-import { NavbarContainer, NavbarWrapper } from "./style";
-import Link from "next/link";
-import { Flex } from "antd";
-import Title from "@/components/ui/Title";
-import Text from "@/components/ui/Text";
+import { NavbarActions, NavbarContainer, NavbarWrapper } from "./style";
 import DarkModeToggle from "./components/DarkModeToggle";
 import ContactButton from "./components/ContactButton";
+import NavbarSections from "./components/NavbarSections";
+import NavbarTitle from "./components/NavbarTitle";
+import MobileMenu from "./components/MobileMenu";
 
 type NavbarProps = {
     isDarkMode: boolean;
@@ -16,7 +15,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
     const data: { label: string; href: string }[] = [
         { label: "Inicio", href: "/" },
         { label: "Servicios", href: "/services" },
-        { label: "Acerca De", href: "/about" },
+        { label: "Sobre nosotros", href: "/about" },
         { label: "Contacto", href: "/contact" },
     ];
 
@@ -32,36 +31,18 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
     return (
         <NavbarWrapper animate="visible" initial="hidden" variants={variants}>
             <NavbarContainer className="bg-[#f2f2f27f] dark:bg-[#1f1f1f7f] border border-[#b6b6b67f] dark:border-[#4a4a4a7f]">
-                <Link href="/">
-                    <Title level={2} fontWeight="400" className="text-white">
-                        Suash
-                    </Title>
-                </Link>
+                <MobileMenu />
+                <NavbarTitle />
 
-                <Flex justify="flex-start" gap="large">
-                    {data.map((data, ix) => (
-                        <Link
-                            href={data.href}
-                            key={`${data.label.toLowerCase()}-${ix}`}
-                        >
-                            <Text
-                                fontSize="20px"
-                                fontWeight="600"
-                                className="border-solid border-b-[2px] border-transparent hover:border-black dark:hover:border-white transition-all duration-300"
-                            >
-                                {data.label}
-                            </Text>
-                        </Link>
-                    ))}
-                </Flex>
+                <NavbarSections data={data} />
 
-                <Flex justify="flex-end" align="center" gap="middle">
+                <NavbarActions justify="flex-end" align="center" gap="middle">
                     <ContactButton />
                     <DarkModeToggle
                         isDarkMode={isDarkMode}
                         toggleDarkMode={toggleDarkMode}
                     />
-                </Flex>
+                </NavbarActions>
             </NavbarContainer>
         </NavbarWrapper>
     );

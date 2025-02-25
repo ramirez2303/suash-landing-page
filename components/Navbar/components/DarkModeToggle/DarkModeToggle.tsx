@@ -17,20 +17,12 @@ const DarkModeToggle = ({
             onClick={toggleDarkMode}
         >
             <LuSunMedium
-                className="text-black dark:text-[#f2f2f2]"
+                className="lightModeButton text-black dark:text-[#f2f2f2]"
                 cursor="pointer"
-                style={{
-                    minWidth: "24px",
-                    minHeight: "24px",
-                }}
             />
             <LuMoonStar
-                className="text-black dark:text-[#f2f2f2]"
+                className="darkModeButton text-black dark:text-[#f2f2f2]"
                 cursor="pointer"
-                style={{
-                    minWidth: "20px",
-                    minHeight: "20px",
-                }}
             />
         </DarkModeToggleContainer>
     );

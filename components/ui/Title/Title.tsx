@@ -21,7 +21,7 @@ const Title = ({
         <AntdTitle
             level={level}
             {...rest}
-            className="text-black dark:text-[#f2f2f2]"
+            className={`text-black dark:text-[#f2f2f2] ${rest.className}`}
             style={{
                 margin: 0,
                 fontSize: fontSize,

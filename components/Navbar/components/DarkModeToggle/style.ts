@@ -18,4 +18,13 @@ export const DarkModeToggleContainer = styled.div<{
         position: relative;
         bottom: ${({ $isDarkMode: isDarkMode }) => (isDarkMode ? "42px" : "0")};
     }
+
+    @media (max-width: 850px) {
+        gap: 18px;
+
+        svg {
+            bottom: ${({ $isDarkMode: isDarkMode }) =>
+                isDarkMode ? "44px" : "1px"};
+        }
+    }
 `;

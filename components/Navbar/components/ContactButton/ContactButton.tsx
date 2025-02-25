@@ -20,12 +20,8 @@ const ContactButton = () => {
     return (
         <Fragment>
             <FaWhatsapp
-                className="text-black dark:text-[#f2f2f2]"
+                className="contactButton text-black dark:text-[#f2f2f2]"
                 cursor="pointer"
-                style={{
-                    minWidth: "20px",
-                    minHeight: "20px",
-                }}
                 onClick={showModal}
             />
             <ContactModal

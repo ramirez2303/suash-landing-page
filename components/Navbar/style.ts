@@ -1,4 +1,5 @@
 "use client";
+import { Flex } from "antd";
 import { motion } from "motion/react";
 import styled from "styled-components";
 
@@ -20,4 +21,34 @@ export const NavbarContainer = styled.div`
     /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+`;
+
+export const NavbarActions = styled(Flex)`
+    .contactButton {
+        min-width: 20px;
+        min-height: 20px;
+    }
+    .lightModeButton {
+        min-width: 24px;
+        min-height: 24px;
+    }
+    .darkModeButton {
+        min-width: 20px;
+        min-height: 20px;
+    }
+
+    @media (max-width: 850px) {
+        .contactButton {
+            min-width: 24px;
+            min-height: 24px;
+        }
+        .lightModeButton {
+            min-width: 26px;
+            min-height: 26px;
+        }
+        .darkModeButton {
+            min-width: 24px;
+            min-height: 24px;
+        }
+    }
 `;
