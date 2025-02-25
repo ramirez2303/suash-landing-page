@@ -6,7 +6,6 @@ import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
 import DarkModeToggle from "./components/DarkModeToggle";
 import ContactButton from "./components/ContactButton";
-// import { TfiWorld } from "react-icons/tfi";
 
 type NavbarProps = {
     isDarkMode: boolean;
@@ -62,7 +61,6 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
                         isDarkMode={isDarkMode}
                         toggleDarkMode={toggleDarkMode}
                     />
-                    {/* <TfiWorld className="text-black dark:text-[#f2f2f2]" /> */}
                 </Flex>
             </NavbarContainer>
         </NavbarWrapper>

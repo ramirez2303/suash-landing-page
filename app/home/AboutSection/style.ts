@@ -1,4 +1,5 @@
 "use client";
+import { Flex } from "antd";
 import { motion } from "motion/react";
 import styled from "styled-components";
 
@@ -12,31 +13,21 @@ export const AboutSectionWrapper = styled.section`
     background: linear-gradient(0deg, rgba(176, 176, 176, 0.5) 0%, #fff 50%);
 `;
 
-export const LogoContainer = styled(motion.div)`
-    width: 100%;
+export const AnimatedContainer = styled(motion.div)`
+    width: 35vw;
     height: 100%;
-    box-sizing: border-box;
-    padding: 80px;
-    transition: 300ms ease-in-out;
     position: relative;
 
-    .aboutImage1 {
-        position: absolute;
-        bottom: -50px;
-        left: 25px;
-        z-index: 1;
-    }
-
-    .aboutImage2 {
-        position: absolute;
-        top: -50px;
-        right: 25px;
-        z-index: 0;
+    @media (max-width: 1100px) {
+        width: auto;
     }
 `;
 
-export const AnimatedContainer = styled(motion.div)`
-    width: 100%;
-    height: 100%;
-    position: relative;
+export const AboutContainer = styled(Flex)`
+    max-width: 80%;
+
+    @media (max-width: 1100px) {
+        max-width: auto;
+        flex-direction: column-reverse;
+    }
 `;

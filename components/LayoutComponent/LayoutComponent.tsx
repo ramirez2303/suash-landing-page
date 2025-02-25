@@ -29,7 +29,7 @@ const LayoutComponent = ({ children }: LayoutComponentProps) => {
     return (
         <Fragment>
             <AnimatePresence>
-                <div
+                <body
                     className={`${discgent.variable} ${kanit.className} ${
                         isDarkMode && "dark"
                     } ${!isDarkMode ? "bg-white" : "bg-black"}`}
@@ -39,7 +39,7 @@ const LayoutComponent = ({ children }: LayoutComponentProps) => {
                         toggleDarkMode={toggleDarkMode}
                     />
                     {children}
-                </div>
+                </body>
             </AnimatePresence>
         </Fragment>
     );

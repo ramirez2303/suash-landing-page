@@ -1,18 +1,17 @@
 import React from "react";
-import { Flex } from "antd";
 import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
+import { AboutTextContainer } from "./style";
 
 const AboutText = () => {
     return (
-        <Flex
+        <AboutTextContainer
             vertical
             justify="flex-start"
             align="center"
             gap="large"
-            style={{ maxWidth: "500px" }}
         >
-            <Title level={3} fontSize="42px" fontWeight="400">
+            <Title level={3} fontSize="36px" fontWeight="400">
                 Sobre nosotros
             </Title>
             <Text fontSize="20px" fontWeight="400">
@@ -24,7 +23,7 @@ const AboutText = () => {
                 nunc. Nullam nec nulla nec risus ultrices tincidunt. Integer
                 vitae magna ac odio scelerisque ferment
             </Text>
-        </Flex>
+        </AboutTextContainer>
     );
 };
 
