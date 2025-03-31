@@ -3,6 +3,19 @@ import "./globals.css";
 import LayoutComponent from "@/components/LayoutComponent";
 import StyledComponentsRegistry from "@/lib/registry";
 import ClientProviders from "./ClientProviders";
+import { Kanit } from "next/font/google";
+import localFont from "next/font/local";
+
+const discgent = localFont({
+    src: "../public/fonts/Discgent.ttf",
+    variable: "--font-discgent",
+});
+
+const kanit = Kanit({
+    weight: ["400", "500", "600", "700"],
+    style: ["normal"],
+    subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
     title: "Suash Media",
@@ -22,10 +35,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="es">
+        <html lang="es" className={`${discgent.variable} ${kanit.className}`}>
             <ClientProviders>
                 <StyledComponentsRegistry>
-                    <LayoutComponent>{children}</LayoutComponent>
+                    <body
+                        className="bg-white dark:bg-black"
+                        suppressHydrationWarning
+                    >
+                        <LayoutComponent>{children}</LayoutComponent>
+                    </body>
                 </StyledComponentsRegistry>
             </ClientProviders>
         </html>

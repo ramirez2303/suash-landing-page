@@ -5,13 +5,13 @@ import Link from "next/link";
 import Text from "@/components/ui/Text";
 
 type MenuProps = {
-    isopen: boolean;
+    isOpen: boolean;
     onClick: () => void;
 };
 
-const Menu = ({ isopen, onClick }: MenuProps) => {
+const Menu = ({ isOpen, onClick }: MenuProps) => {
     return (
-        <MenuContainer isopen={isopen} onClick={onClick}>
+        <MenuContainer $isOpen={isOpen} onClick={onClick}>
             {navbarSections.map((data, ix) => (
                 <Link
                     href={data.href}

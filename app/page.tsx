@@ -3,10 +3,11 @@ import AboutSection from "./home/AboutSection";
 import ContactSection from "./home/ContactSection";
 import HomeSection from "./home/HomeSection";
 import ServicesSection from "./home/ServicesSection";
+import { Fragment } from "react";
 
 const Home = () => {
     return (
-        <div>
+        <Fragment>
             <HomeSection />
             <HomeContainer>
                 <ServicesSection />
@@ -14,7 +15,7 @@ const Home = () => {
                 <AboutSection />
                 <ContactSection />
             </HomeContainer>
-        </div>
+        </Fragment>
     );
 };
 

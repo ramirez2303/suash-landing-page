@@ -1,21 +1,8 @@
 "use client";
 
-import React, { Fragment, ReactNode, useState } from "react";
+import React, { Fragment, ReactNode, useEffect, useState } from "react";
 import { AnimatePresence } from "motion/react";
 import Navbar from "../Navbar";
-import localFont from "next/font/local";
-import { Kanit } from "next/font/google";
-
-const discgent = localFont({
-    src: "../../public/fonts/Discgent.ttf",
-    variable: "--font-discgent",
-});
-
-const kanit = Kanit({
-    weight: ["400", "500", "600", "700"],
-    style: ["normal"],
-    subsets: ["latin"],
-});
 
 type LayoutComponentProps = {
     children: ReactNode;
@@ -23,24 +10,25 @@ type LayoutComponentProps = {
 
 const LayoutComponent = ({ children }: LayoutComponentProps) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
+
     const toggleDarkMode = () => {
         setTimeout(() => setIsDarkMode((prev) => !prev), 100);
     };
+
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.classList.add("dark", "bg-black");
+            document.body.classList.remove("bg-white");
+        } else {
+            document.body.classList.add("bg-white");
+            document.body.classList.remove("dark", "bg-black");
+        }
+    }, [isDarkMode]);
+
     return (
         <Fragment>
-            <AnimatePresence>
-                <body
-                    className={`${discgent.variable} ${kanit.className} ${
-                        isDarkMode && "dark"
-                    } ${!isDarkMode ? "bg-white" : "bg-black"}`}
-                >
-                    <Navbar
-                        isDarkMode={isDarkMode}
-                        toggleDarkMode={toggleDarkMode}
-                    />
-                    {children}
-                </body>
-            </AnimatePresence>
+            <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            <AnimatePresence>{children}</AnimatePresence>
         </Fragment>
     );
 };

@@ -4,12 +4,12 @@ import AnimatedMenuIcon from "./components/AnimatedMenuIcon";
 import Menu from "./components/Menu";
 
 const MobileMenu = () => {
-    const [isopen, setIsopen] = useState(false);
-    const toggleMenu = () => setIsopen(!isopen);
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleMenu = () => setIsOpen(!isOpen);
     return (
         <Fragment>
-            <AnimatedMenuIcon isopen={isopen} onClick={toggleMenu} />
-            <Menu isopen={isopen} onClick={toggleMenu} />
+            <AnimatedMenuIcon isOpen={isOpen} onClick={toggleMenu} />
+            <Menu isOpen={isOpen} onClick={toggleMenu} />
         </Fragment>
     );
 };

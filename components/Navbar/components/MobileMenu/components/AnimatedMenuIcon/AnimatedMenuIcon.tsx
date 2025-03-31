@@ -2,12 +2,12 @@ import React from "react";
 import { motion, SVGMotionProps } from "framer-motion";
 
 interface Props extends SVGMotionProps<SVGSVGElement> {
-    isopen?: boolean;
+    isOpen?: boolean;
     onClick?: () => void;
 }
 
-const AnimatedMenuIcon = ({ isopen, onClick, ...props }: Props) => {
-    const variant = isopen ? "opened" : "closed";
+const AnimatedMenuIcon = ({ isOpen, onClick, ...props }: Props) => {
+    const variant = isOpen ? "opened" : "closed";
     const top = {
         closed: {
             rotate: 0,
