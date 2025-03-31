@@ -9,48 +9,50 @@ import communityManager from "@/public/assets/services/community-manager-card.av
 import imageAndVideo from "@/public/assets/services/photographic-card.jpg";
 import drone from "@/public/assets/services/drone-card.jpg";
 import video from "@/public/assets/services/video-card.jpg";
-import graphicDesignVector from "@/public/assets/services/graphic-design-vector.png";
-import webDevelopmentVector from "@/public/assets/services/code-vector.png";
-import communityManagerVector from "@/public/assets/services/cm-vector.avif";
-import imageAndVideoVector from "@/public/assets/services/camera-vector.png";
-import droneVector from "@/public/assets/services/drone-vector.png";
-import videoVector from "@/public/assets/services/video-vector.svg";
+
+import { SlScreenDesktop } from "react-icons/sl";
+import { BsCameraFill } from "react-icons/bs";
+import { SiAdobepremierepro } from "react-icons/si";
+import { PiDrone } from "react-icons/pi";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { IoCodeSlashOutline } from "react-icons/io5";
 
 import { Flex } from "antd";
 import Objectives from "./components/Objectives";
 import Advantages from "./components/Advantages";
+import { IconType } from "react-icons/lib";
 
 const ServicesSection = () => {
     const data = [
         {
             title: "Graphic Design",
             image: graphicDesign,
-            icon: graphicDesignVector,
+            Icon: SlScreenDesktop,
         },
         {
             title: "Photograpic",
             image: imageAndVideo,
-            icon: imageAndVideoVector,
+            Icon: BsCameraFill,
         },
         {
             title: "Video",
             image: video,
-            icon: videoVector,
+            Icon: SiAdobepremierepro,
         },
         {
             title: "Drone",
             image: drone,
-            icon: droneVector,
+            Icon: PiDrone,
         },
         {
             title: "Community Manager",
             image: communityManager,
-            icon: communityManagerVector,
+            Icon: IoPhonePortraitOutline,
         },
         {
             title: "Web Development",
             image: webDevelopment,
-            icon: webDevelopmentVector,
+            Icon: IoCodeSlashOutline,
         },
     ];
 
@@ -86,7 +88,7 @@ const ServicesSection = () => {
                         key={ix}
                         title={item.title}
                         image={item.image}
-                        icon={item.icon}
+                        Icon={item.Icon as IconType}
                     />
                 ))}
             </ServicesCardContainer>

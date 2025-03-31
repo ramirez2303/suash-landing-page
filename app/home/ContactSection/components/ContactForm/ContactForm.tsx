@@ -28,7 +28,7 @@ const ContactForm = () => {
 
     return (
         <Fragment>
-            <FormContainer>
+            <FormContainer className="bg-[rgba(255, 255, 255, 0.3)] dark:bg-[rgba(0,0,0,0.3)] border border-[rgba(0, 0, 0, 0.5)] dark:border-[rgba(255,255,255,0.5)]">
                 <Form
                     form={form}
                     name="contact-form"

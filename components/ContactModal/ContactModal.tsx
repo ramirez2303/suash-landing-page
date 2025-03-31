@@ -20,11 +20,14 @@ const ContactModal = ({ modalConfig }: ContactModalProps) => {
         <Modal
             open={modalConfig.isModalOpen}
             onCancel={modalConfig.handleCancel}
+            classNames={{
+                content: "dark:bg-[#121212] dark:text-white",
+            }}
             footer={[
                 <ModalButton
                     key="close"
                     onClick={modalConfig.handleOk}
-                    className="text-black hover:text-white hover:bg-black dark:text-white dark:hover:text-black dark:hover:bg-white"
+                    className="text-black hover:text-white hover:bg-black dark:text-white dark:hover:text-black dark:hover:bg-gray-300"
                 >
                     Cerrar
                 </ModalButton>,
@@ -32,7 +35,7 @@ const ContactModal = ({ modalConfig }: ContactModalProps) => {
                 <ModalButton
                     key="contact"
                     onClick={modalConfig.handleOk}
-                    className="text-black hover:text-white hover:bg-black dark:text-white dark:hover:text-black dark:hover:bg-white"
+                    className="text-black hover:text-white hover:bg-black dark:text-white dark:hover:text-black dark:hover:bg-gray-300"
                 >
                     <Link
                         href="https://wa.me/+5492266679724"
@@ -75,7 +78,9 @@ const ContactModal = ({ modalConfig }: ContactModalProps) => {
                         icon={SLogo.src}
                         size={300}
                         iconSize={80}
-                        style={{ marginBottom: "30px" }}
+                        style={{ marginBottom: "30px", filter: "invert(1)" }}
+                        color="#121212"
+                        bgColor="#f2f2f2"
                     />
                 </Flex>
             </Flex>

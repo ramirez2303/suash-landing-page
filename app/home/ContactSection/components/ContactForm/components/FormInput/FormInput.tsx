@@ -21,7 +21,14 @@ const FormInput = ({
 }: FormInputProps) => {
     return (
         <Form.Item<FieldType>
-            label={label}
+            label={
+                <label
+                    style={{ fontSize: "18x" }}
+                    className="dark:text-white text-black"
+                >
+                    {label}
+                </label>
+            }
             name={name}
             layout="vertical"
             rules={[

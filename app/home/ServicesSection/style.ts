@@ -8,7 +8,7 @@ export const BgContainer = styled.div`
     transform: rotate(180deg);
     position: absolute;
     top: 0;
-    left: 0;
+    left: 1px;
 `;
 
 export const ServicesWrapper = styled.section`

@@ -12,7 +12,6 @@ export const InfoCardContainer = styled.div`
     padding: 20px;
     box-sizing: border-box;
     border-radius: 10px;
-    background-color:rgba(245, 245, 245, 0.5);
     transition: all 0.3s;
     backdrop-filter: blur(5px);
     box-shadow: rgba(50, 50, 93, 0.1) 0px 50px 100px -20px,

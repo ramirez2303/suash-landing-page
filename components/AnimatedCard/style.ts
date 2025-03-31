@@ -51,7 +51,6 @@ export const TextCardContainer = styled.div`
         min-width: 120px;
         min-height: 120px;
         border-radius: 50%;
-        background-color: #fff;
         box-sizing: border-box;
         padding: 10px;
     }

@@ -9,8 +9,6 @@ export const AboutSectionWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: linear-gradient(0deg, rgba(176, 176, 176, 0.5) 0%, #fff 50%);
 `;
 
 export const AnimatedContainer = styled(motion.div)`

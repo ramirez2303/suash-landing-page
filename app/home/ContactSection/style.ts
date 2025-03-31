@@ -10,8 +10,6 @@ export const ContactSectionWrapper = styled.div`
     padding: 60px 0 80px;
     gap: 50px;
 
-    background: linear-gradient(0deg, #fff 0%, rgba(176, 176, 176, 0.5) 80%);
-
     & > div {
         max-width: 80%;
     }

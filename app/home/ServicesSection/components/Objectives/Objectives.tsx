@@ -1,5 +1,8 @@
 import React from "react";
-import { IoMegaphoneOutline } from "react-icons/io5";
+import { AiOutlineRise } from "react-icons/ai";
+import { MdOutlineVisibility } from "react-icons/md";
+import { AiOutlineInteraction } from "react-icons/ai";
+
 import InfoCard from "../InfoCard";
 import { AnimatedContainer } from "./style";
 
@@ -8,7 +11,7 @@ const Objectives = () => {
         {
             title: "Crecimiento Online",
             icon: (
-                <IoMegaphoneOutline
+                <AiOutlineRise
                     fontSize="40px"
                     className="text-black dark:text-white"
                 />
@@ -19,7 +22,7 @@ const Objectives = () => {
         {
             title: "Visibilidad de Marca",
             icon: (
-                <IoMegaphoneOutline
+                <MdOutlineVisibility
                     fontSize="40px"
                     className="text-black dark:text-white"
                 />
@@ -30,7 +33,7 @@ const Objectives = () => {
         {
             title: "Interacción con la Audiencia",
             icon: (
-                <IoMegaphoneOutline
+                <AiOutlineInteraction
                     fontSize="40px"
                     className="text-black dark:text-white"
                 />

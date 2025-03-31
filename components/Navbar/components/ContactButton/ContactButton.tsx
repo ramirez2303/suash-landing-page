@@ -1,7 +1,8 @@
 "use client";
 import ContactModal from "@/components/ContactModal";
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
+import { ContactModalContainer } from "./style";
 
 const ContactButton = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +19,7 @@ const ContactButton = () => {
         setIsModalOpen(false);
     };
     return (
-        <Fragment>
+        <ContactModalContainer>
             <FaWhatsapp
                 className="contactButton text-black dark:text-[#f2f2f2]"
                 cursor="pointer"
@@ -31,7 +32,7 @@ const ContactButton = () => {
                     handleCancel,
                 }}
             />
-        </Fragment>
+        </ContactModalContainer>
     );
 };
 

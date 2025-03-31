@@ -19,7 +19,7 @@ const FormButton = ({
             <button
                 type="submit"
                 disabled={isDisabled}
-                className={`${disabledStyles} mt-5 transition-all duration-300 ease-in-out rounded-lg w-full bg-black dark:bg-white text-white dark:text-black text-lg font-bold p-3 flex justify-center items-center gap-2`}
+                className={`${disabledStyles} mt-5 transition-all duration-300 ease-in-out rounded-lg w-full bg-black dark:bg-gray-300 text-white dark:text-black text-lg font-bold p-3 flex justify-center items-center gap-2`}
                 onClick={handleSubmit}
             >
                 {isLoading ? (

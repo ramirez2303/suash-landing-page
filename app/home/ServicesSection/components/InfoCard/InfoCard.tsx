@@ -12,7 +12,7 @@ type InfoCardProps = {
 
 const InfoCard = ({ title, icon, description }: InfoCardProps) => {
     return (
-        <InfoCardContainer>
+        <InfoCardContainer className="bg-[#f5f5f57f] dark:bg-[#1f1f1f91]">
             <Flex vertical justify="center" align="center" gap="20px">
                 <Title
                     level={5}

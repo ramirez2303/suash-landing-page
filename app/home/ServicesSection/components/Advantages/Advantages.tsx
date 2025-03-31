@@ -1,5 +1,8 @@
 import React from "react";
 import { IoMegaphoneOutline } from "react-icons/io5";
+import { BsShieldPlus } from "react-icons/bs";
+import { PiStrategy } from "react-icons/pi";
+
 import InfoCard from "../InfoCard";
 import { AnimatedContainer } from "../Objectives/style";
 
@@ -19,7 +22,7 @@ const Advantages = () => {
         {
             title: "Calidad Profesional",
             icon: (
-                <IoMegaphoneOutline
+                <BsShieldPlus
                     fontSize="40px"
                     className="text-black dark:text-white"
                 />
@@ -30,7 +33,7 @@ const Advantages = () => {
         {
             title: "Estrategias Efectivas",
             icon: (
-                <IoMegaphoneOutline
+                <PiStrategy
                     fontSize="40px"
                     className="text-black dark:text-white"
                 />
