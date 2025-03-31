@@ -1,19 +1,24 @@
 import React from "react";
-import { NavbarSectionsContainer } from "./style";
+import { MenuContainer } from "./style";
+import { navbarSections } from "@/lib/data";
 import Link from "next/link";
 import Text from "@/components/ui/Text";
-import { navbarSections } from "@/lib/data";
 
-const NavbarSections = () => {
+type MenuProps = {
+    isopen: boolean;
+    onClick: () => void;
+};
+
+const Menu = ({ isopen, onClick }: MenuProps) => {
     return (
-        <NavbarSectionsContainer justify="flex-start" gap="large">
+        <MenuContainer isopen={isopen} onClick={onClick}>
             {navbarSections.map((data, ix) => (
                 <Link
                     href={data.href}
                     key={`${data.label.toLowerCase()}-${ix}`}
                 >
                     <Text
-                        fontSize="20px"
+                        fontSize="14px"
                         fontWeight="600"
                         className="border-solid border-b-[2px] border-transparent hover:border-black dark:hover:border-white transition-all duration-300"
                     >
@@ -21,8 +26,8 @@ const NavbarSections = () => {
                     </Text>
                 </Link>
             ))}
-        </NavbarSectionsContainer>
+        </MenuContainer>
     );
 };
 
-export default NavbarSections;
+export default Menu;

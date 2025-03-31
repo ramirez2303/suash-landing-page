@@ -12,13 +12,6 @@ type NavbarProps = {
 };
 
 const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
-    const data: { label: string; href: string }[] = [
-        { label: "Inicio", href: "/" },
-        { label: "Servicios", href: "/services" },
-        { label: "Sobre nosotros", href: "/about" },
-        { label: "Contacto", href: "/contact" },
-    ];
-
     const variants = {
         hidden: { opacity: 0, top: -20 },
         visible: {
@@ -34,9 +27,9 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
                 <MobileMenu />
                 <NavbarTitle />
 
-                <NavbarSections data={data} />
+                <NavbarSections />
 
-                <NavbarActions justify="flex-end" align="center" gap="middle">
+                <NavbarActions justify="flex-end" align="center">
                     <ContactButton />
                     <DarkModeToggle
                         isDarkMode={isDarkMode}

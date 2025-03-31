@@ -17,3 +17,8 @@ export type FieldDataType = {
     required: boolean;
     isTextArea?: boolean;
 };
+
+export type NavbarType = {
+    label: string;
+    href: string;
+};

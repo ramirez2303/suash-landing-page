@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const DarkModeToggleContainer = styled.div<{
     $isDarkMode: boolean;
 }>`
+    min-width: 24px;
     height: 24px;
     display: flex;
     flex-direction: column;

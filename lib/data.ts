@@ -1,4 +1,4 @@
-import { FieldDataType } from "./type";
+import { FieldDataType, NavbarType } from "./type";
 
 export const formFields: FieldDataType[] = [
     {
@@ -30,4 +30,12 @@ export const formFields: FieldDataType[] = [
         required: false,
         isTextArea: true,
     },
+];
+
+
+export const navbarSections: NavbarType[] = [
+    { label: "Inicio", href: "/" },
+    { label: "Servicios", href: "/services" },
+    { label: "Sobre nosotros", href: "/about" },
+    { label: "Contacto", href: "/contact" },
 ];

@@ -18,12 +18,16 @@ export const NavbarContainer = styled.div`
     padding: 1rem 3rem;
     margin: 0 auto;
 
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+
+    @media (max-width: 850px) {
+        padding: 1rem 2rem 1rem 3rem;
+    }
 `;
 
 export const NavbarActions = styled(Flex)`
+    gap: 16px;
+
     .contactButton {
         min-width: 20px;
         min-height: 20px;
@@ -38,6 +42,10 @@ export const NavbarActions = styled(Flex)`
     }
 
     @media (max-width: 850px) {
+        max-width: 32px;
+        overflow: visible;
+        gap: 10px;
+
         .contactButton {
             min-width: 24px;
             min-height: 24px;
