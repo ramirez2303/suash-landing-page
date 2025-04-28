@@ -32,10 +32,9 @@ export const formFields: FieldDataType[] = [
     },
 ];
 
-
 export const navbarSections: NavbarType[] = [
-    { label: "Inicio", href: "/" },
+    { label: "Inicio", href: "/home" },
     { label: "Servicios", href: "/services" },
-    { label: "Sobre nosotros", href: "/about" },
+    { label: "Acerca de", href: "/about" },
     { label: "Contacto", href: "/contact" },
 ];

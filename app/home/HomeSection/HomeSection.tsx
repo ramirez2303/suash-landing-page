@@ -31,6 +31,7 @@ const HomeSection = () => {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
+            id="home"
         >
             <HomeContainer
                 initial="hidden"

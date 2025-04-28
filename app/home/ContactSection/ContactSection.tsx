@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const ContactSection = () => {
     return (
-        <ContactSectionWrapper className="bg-[linear-gradient(180deg,_rgba(176,176,176,0.5)_0%,_#fff_50%)] dark:bg-[linear-gradient(180deg,_rgba(0,0,0,0.5)_0%,_#21252cd0_50%)]">
+        <ContactSectionWrapper id="contact" className="bg-[linear-gradient(180deg,_rgba(176,176,176,0.5)_0%,_#fff_50%)] dark:bg-[linear-gradient(180deg,_rgba(0,0,0,0.5)_0%,_#21252cd0_50%)]">
             <Flex
                 justify="space-around"
                 align="center"
