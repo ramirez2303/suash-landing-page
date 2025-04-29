@@ -11,10 +11,10 @@ const AboutText = () => {
             align="center"
             gap="large"
         >
-            <Title level={3} fontSize="36px" fontWeight="400">
+            <Title level={3} className="text-[36px] max-[850px]:text-[28px]" fontSize="" fontWeight="400">
                 Sobre nosotros
             </Title>
-            <Text fontSize="20px" fontWeight="400">
+            <Text className="text-[20px] max-[850px]:text-[16px]" fontSize="" fontWeight="400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 eget libero nec turpis lacinia aliquam. Donec in ligula
                 vestibulum, ultricies nunc nec, convallis mi. Sed nec ultrices

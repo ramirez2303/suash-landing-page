@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Title from "@/components/ui/Title";
 import { AnimatePresence } from "motion/react";
 import { AnimatedTextContainer } from "../../style";
 import suashLogo from "@/public/assets/suash-logo.png";
@@ -30,7 +29,7 @@ const HomeText = ({ showNextLevel }: HomeTextProps) => {
                 src={suashLogo}
                 alt="Suash Logo"
                 width={550}
-                className="dark:brightness-[0] dark:invert-[1]"
+                className="dark:brightness-[0] dark:invert-[1] w-[550px] max-[850px]:w-[400px] max-[500px]:w-[300px]"
             />
             <AnimatePresence>
                 {showNextLevel && (
@@ -40,9 +39,9 @@ const HomeText = ({ showNextLevel }: HomeTextProps) => {
                         exit="exit"
                         variants={textVariants}
                     >
-                        <Title level={2} fontSize="38px" fontWeight="300">
+                        <h2 className="font-[discgent] text-black dark:text-[#f2f2f2] max-[850px]:text-[24px] max-[850px]:pt-1 max-[500px]:text-[18px] text-[38px] font-[300]">
                             Next Level
-                        </Title>
+                        </h2>
                     </AnimatedTextContainer>
                 )}
             </AnimatePresence>

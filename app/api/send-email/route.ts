@@ -1,34 +1,48 @@
+import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
-    const { name, email, phone, message } = await req.json();
-
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASS,
-        },
-    });
-
-    const mailOptions = {
-        from: email,
-        to: process.env.RECEIVER_EMAIL,
-        subject: `Nuevo mensaje de ${name}`,
-        text: `mail:${email} phone:${phone} message:${message}`,
-    };
-
+export async function POST(request: Request) {
     try {
+        const { name, email, phone, message } = await request.json();
+
+        if (!name || !email || !phone || !message) {
+            return NextResponse.json(
+                { message: "Todos los campos son obligatorios" },
+                { status: 400 }
+            );
+        }
+
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            auth: {
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS,
+            },
+        });
+
+        const mailOptions = {
+            from: `"${name}" <${process.env.GMAIL_USER}>`,
+            to: process.env.RECEIVER_EMAIL,
+            subject: `Nuevo mensaje de ${name}`,
+            text: `
+                Nombre: ${name}
+                Correo: ${email}
+                Teléfono: ${phone}
+                Mensaje: ${message}
+            `,
+        };
+
         await transporter.sendMail(mailOptions);
+
         return NextResponse.json(
             { message: "Email enviado con éxito" },
             { status: 200 }
         );
-    } catch (error) {
-        console.error("Error al enviar el email", error);
+    } catch (error: any) {
         return NextResponse.json(
-            { message: "Error al enviar el email" },
+            { message: "Error al enviar email", error: error.message },
             { status: 500 }
         );
     }

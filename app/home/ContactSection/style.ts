@@ -13,4 +13,8 @@ export const ContactSectionWrapper = styled.div`
     & > div {
         max-width: 80%;
     }
+
+    @media (max-width: 1250px) {
+        height: auto;
+    }
 `;

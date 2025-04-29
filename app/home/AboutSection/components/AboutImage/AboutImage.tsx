@@ -10,16 +10,12 @@ const AboutImage = () => {
             <Image
                 src={aboutIMG1}
                 alt="Suash Logo"
-                className="aboutImage1 dark:bg-[#21252cd0] rounded-full p-4"
-                width={400}
-                height={400}
+                className="aboutImage1 dark:bg-[#21252cd0] rounded-full p-4 w-[400px] h-[400px] max-[850px]:w-[300px] max-[850px]:h-[300px] max-[550px]:w-[250px] max-[550px]:h-[250px]"
             />
             <Image
                 src={aboutIMG2}
                 alt="Suash Logo"
-                className="aboutImage2 dark:bg-[#21252cd0] rounded-full p-4"
-                width={400}
-                height={400}
+                className="aboutImage2 dark:bg-[#21252cd0] rounded-full p-4 w-[400px] h-[400px] max-[850px]:w-[300px] max-[850px]:h-[300px] max-[550px]:w-[250px] max-[550px]:h-[250px]"
             />
         </LogoContainer>
     );

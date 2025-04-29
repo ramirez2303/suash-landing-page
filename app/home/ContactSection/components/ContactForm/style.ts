@@ -52,4 +52,11 @@ export const FormContainer = styled.div`
     input[type="number"] {
         -moz-appearance: textfield; /* Firefox */
     }
+
+    @media (max-width: 1250px) {
+        width: 80%;
+    }
+    @media (max-width: 700px) {
+        width: 100%;
+    }
 `;

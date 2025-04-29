@@ -50,4 +50,10 @@ export const ServicesCardContainer = styled(motion.div)`
         row-gap: 40px;
         grid-template-columns: repeat(2, minmax(400px, 1fr));
     }
+
+    @media (max-width: 1100px) {
+        gap: 0px;
+        row-gap: 40px;
+        grid-template-columns: repeat(1, minmax(400px, 1fr));
+    }
 `;

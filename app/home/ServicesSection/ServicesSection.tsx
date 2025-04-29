@@ -106,7 +106,13 @@ const ServicesSection = () => {
                 gap="80px"
                 vertical
             >
-                <Title level={2} fontSize="36px" fontWeight="400">
+                <Title
+                    level={2}
+                    fontSize="36px"
+                    fontWeight="400"
+                    wrap
+                    className="text-center"
+                >
                     Objetivos y Ventajas
                 </Title>
                 <Objectives />

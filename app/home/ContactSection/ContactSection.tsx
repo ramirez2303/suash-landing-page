@@ -13,11 +13,15 @@ import Link from "next/link";
 
 const ContactSection = () => {
     return (
-        <ContactSectionWrapper id="contact" className="bg-[linear-gradient(180deg,_rgba(176,176,176,0.5)_0%,_#fff_50%)] dark:bg-[linear-gradient(180deg,_rgba(0,0,0,0.5)_0%,_#21252cd0_50%)]">
+        <ContactSectionWrapper
+            id="contact"
+            className="bg-[linear-gradient(180deg,_rgba(176,176,176,0.5)_0%,_#fff_50%)] dark:bg-[linear-gradient(180deg,_rgba(0,0,0,0.5)_0%,_#21252cd0_50%)]"
+        >
             <Flex
                 justify="space-around"
                 align="center"
                 style={{ width: "100%" }}
+                className="max-[1250px]:flex-col max-[1250px]:gap-16 max-[1250px]:mt-[250px]"
             >
                 <Flex gap="large" vertical style={{ marginTop: "-50px" }}>
                     <Image

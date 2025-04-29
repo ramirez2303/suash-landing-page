@@ -10,13 +10,9 @@ const ImageCard = ({ src }: ImageCardProps) => {
         <Image
             src={src}
             alt="asd"
-            className="image"
+            className="image w-[400px] h-[250px] max-[600px]:w-[300px] max-[600px]:h-[200px]"
             width={400}
             height={250}
-            style={{
-                maxWidth: "400px",
-                maxHeight: "250px",
-            }}
         />
     );
 };
