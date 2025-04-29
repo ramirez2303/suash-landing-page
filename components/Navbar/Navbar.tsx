@@ -23,13 +23,17 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
 
     return (
         <NavbarWrapper animate="visible" initial="hidden" variants={variants}>
-            <NavbarContainer className="bg-[#f2f2f27f] dark:bg-[#1f1f1f7f] border border-[#b6b6b67f] dark:border-[#4a4a4a7f]">
+            <NavbarContainer className="grid-cols-3 bg-[#f2f2f27f] dark:bg-[#1f1f1f7f] border border-[#b6b6b67f] dark:border-[#4a4a4a7f]">
                 <MobileMenu />
                 <NavbarTitle />
 
                 <NavbarSections />
 
-                <NavbarActions justify="flex-end" align="center">
+                <NavbarActions
+                    justify="flex-end"
+                    align="center"
+                    className="col-span-1"
+                >
                     <ContactButton />
                     <DarkModeToggle
                         isDarkMode={isDarkMode}

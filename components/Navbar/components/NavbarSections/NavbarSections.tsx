@@ -19,7 +19,11 @@ const NavbarSections = () => {
         }
     };
     return (
-        <NavbarSectionsContainer justify="flex-start" gap="large">
+        <NavbarSectionsContainer
+            justify="center"
+            gap="large"
+            className="col-span-1"
+        >
             {navbarSections.map((data, ix) => (
                 <Link
                     href={data.href}
@@ -30,6 +34,7 @@ const NavbarSections = () => {
                         fontSize="20px"
                         fontWeight="600"
                         className="border-solid border-b-[2px] border-transparent hover:border-black dark:hover:border-white transition-all duration-300"
+                        noWrap
                     >
                         {data.label}
                     </Text>

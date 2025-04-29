@@ -11,9 +11,7 @@ export const NavbarWrapper = styled(motion.nav)`
 `;
 
 export const NavbarContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
     box-sizing: border-box;
     padding: 1rem 3rem;
     margin: 0 auto;
@@ -21,6 +19,9 @@ export const NavbarContainer = styled.div`
     backdrop-filter: blur(5px);
 
     @media (max-width: 850px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 1rem 2rem 1rem 3rem;
     }
 `;

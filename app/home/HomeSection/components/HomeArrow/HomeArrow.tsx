@@ -26,13 +26,31 @@ const HomeArrow = () => {
             },
         },
     };
+
+    const handleScroll = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+    ) => {
+        event.preventDefault();
+
+        const sectionId = href.replace("/", "");
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <ArrowContainer
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
-            <Link href="#services">
+            <Link
+                href="/services"
+                onClick={(e) => handleScroll(e, "/services")}
+            >
                 <AnimatedArrow animate="animation" variants={arrowVariants}>
                     <RiArrowDownDoubleLine
                         className="text-black dark:text-[#f2f2f2]"
