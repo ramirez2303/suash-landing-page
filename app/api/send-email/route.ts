@@ -40,10 +40,17 @@ export async function POST(request: Request) {
             { message: "Email enviado con éxito" },
             { status: 200 }
         );
-    } catch (error: any) {
-        return NextResponse.json(
-            { message: "Error al enviar email", error: error.message },
-            { status: 500 }
-        );
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            return NextResponse.json(
+                { message: "Error al enviar email", error: error.message },
+                { status: 500 }
+            );
+        } else {
+            return NextResponse.json(
+                { message: "Error desconocido al enviar email" },
+                { status: 500 }
+            );
+        }
     }
 }
