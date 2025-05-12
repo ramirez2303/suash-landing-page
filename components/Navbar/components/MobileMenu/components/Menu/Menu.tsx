@@ -10,12 +10,26 @@ type MenuProps = {
 };
 
 const Menu = ({ isOpen, onClick }: MenuProps) => {
+    const handleScroll = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+    ) => {
+        event.preventDefault();
+
+        const sectionId = href.replace("/", "");
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     return (
         <MenuContainer $isOpen={isOpen} onClick={onClick}>
             {navbarSections.map((data, ix) => (
                 <Link
                     href={data.href}
                     key={`${data.label.toLowerCase()}-${ix}`}
+                    onClick={(e) => handleScroll(e, data.href)}
                 >
                     <Text
                         fontSize="14px"
