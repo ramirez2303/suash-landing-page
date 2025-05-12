@@ -1,21 +1,49 @@
-import React from "react";
+"use client";
+import React, { JSX, useEffect, useRef, useState } from "react";
 import { AnimatedCardContainer } from "./style";
 import { StaticImageData } from "next/image";
 import ImageCard from "./components/ImageCard";
 import TextCard from "./components/TextCard";
-import { IconType } from "react-icons/lib";
 
 type AnimatedCardProps = {
     title: string;
     image: StaticImageData;
-    Icon: IconType;
+    icon: JSX.Element;
 };
 
-const AnimatedCard = ({ title, image, Icon }: AnimatedCardProps) => {
+const AnimatedCard = ({ title, image, icon }: AnimatedCardProps) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 1 }
+        );
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+        };
+    }, []);
+
     return (
-        <AnimatedCardContainer>
+        <AnimatedCardContainer
+            ref={cardRef}
+            className={isVisible ? "visible" : ""}
+        >
             <ImageCard src={image.src} />
-            <TextCard title={title} Icon={Icon} />
+            <TextCard isVisible={isVisible} title={title} icon={icon} />
         </AnimatedCardContainer>
     );
 };

@@ -20,39 +20,38 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 import { Flex } from "antd";
 import Objectives from "./components/Objectives";
 import Advantages from "./components/Advantages";
-import { IconType } from "react-icons/lib";
 
 const ServicesSection = () => {
     const data = [
         {
             title: "Graphic Design",
             image: graphicDesign,
-            Icon: SlScreenDesktop,
+            icon: <SlScreenDesktop className="w-[100px] h-[100px] p-4"/>,
         },
         {
             title: "Photograpic",
             image: imageAndVideo,
-            Icon: BsCameraFill,
+            icon: <BsCameraFill className="w-[100px] h-[100px] p-4"/>,
         },
         {
             title: "Video",
             image: video,
-            Icon: SiAdobepremierepro,
+            icon: <SiAdobepremierepro className="w-[100px] h-[100px] p-4"/>,
         },
         {
             title: "Drone",
             image: drone,
-            Icon: PiDrone,
+            icon: <PiDrone className="w-[100px] h-[100px] p-4"/>,
         },
         {
             title: "Community Manager",
             image: communityManager,
-            Icon: IoPhonePortraitOutline,
+            icon: <IoPhonePortraitOutline className="w-[100px] h-[100px] p-4"/>,
         },
         {
             title: "Web Development",
             image: webDevelopment,
-            Icon: IoCodeSlashOutline,
+            icon: <IoCodeSlashOutline className="w-[100px] h-[100px] p-4"/>,
         },
     ];
 
@@ -88,7 +87,7 @@ const ServicesSection = () => {
                         key={ix}
                         title={item.title}
                         image={item.image}
-                        Icon={item.Icon as IconType}
+                        icon={item.icon}
                     />
                 ))}
             </ServicesCardContainer>

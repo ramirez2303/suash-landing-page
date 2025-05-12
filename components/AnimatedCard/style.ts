@@ -29,6 +29,18 @@ export const AnimatedCardContainer = styled.div`
                 rgba(0, 0, 0, 0.12) 0px 15px 12px;
         }
     }
+
+    @media (max-width: 768px) {
+        &.visible {
+            .image {
+                filter: brightness(0.7);
+                transform: perspective(900px) translateY(-5%) rotateX(25deg)
+                    translateZ(0);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px,
+                    rgba(0, 0, 0, 0.12) 0px 15px 12px;
+            }
+        }
+    }
 `;
 
 export const TextCardContainer = styled.div`
@@ -58,5 +70,13 @@ export const TextCardContainer = styled.div`
     ${AnimatedCardContainer}:hover & {
         opacity: 1;
         bottom: 5%;
+    }
+
+    @media (max-width: 768px) {
+        &.visible {
+            opacity: 1;
+            bottom: 5%;
+            pointer-events: all;
+        }
     }
 `;

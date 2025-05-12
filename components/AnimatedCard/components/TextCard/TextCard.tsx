@@ -1,17 +1,19 @@
-import React from "react";
+import React, { JSX } from "react";
 import { TextCardContainer } from "../../style";
 import Text from "@/components/ui/Text";
-import { IconType } from "react-icons/lib";
 
 type TextCardProps = {
+    isVisible?: boolean;
     title: string;
-    Icon: IconType;
+    icon: JSX.Element;
 };
 
-const TextCard = ({ title, Icon }: TextCardProps) => {
+const TextCard = ({ isVisible, title, icon }: TextCardProps) => {
     return (
-        <TextCardContainer>
-            <Icon className="w-[100px] h-[100px] bg-white dark:bg-gray-800 text-black dark:text-white p-4 rounded-[16px] mb-2" />
+        <TextCardContainer className={isVisible ? "visible" : ""}>
+            <div className="w-[100px] h-[100px] bg-white dark:bg-gray-800 text-black dark:text-white rounded-[16px] mb-2">
+                {icon}
+            </div>
             <Text
                 className="bg-white dark:bg-gray-800"
                 style={{

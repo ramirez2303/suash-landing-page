@@ -39,7 +39,7 @@ export default function RootLayout({
             <ClientProviders>
                 <StyledComponentsRegistry>
                     <body
-                        className="bg-white dark:bg-black"
+                        className="bg-white dark:bg-black overflow-hidden"
                         suppressHydrationWarning
                     >
                         <LayoutComponent>{children}</LayoutComponent>
